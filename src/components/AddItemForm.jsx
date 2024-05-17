@@ -33,6 +33,7 @@ export default function AddItemForm({ onAddItem }) {
         value={itemText}
         onChange={e => setItemText(e.target.value)}
         autoFocus
+        placeholder="Toothbrush..."
       />
       <Button>Add to list</Button>
     </form>
