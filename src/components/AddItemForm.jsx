@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import Button from "./Button";
+import { useItemsStore } from "../stores/itemStore";
 
-export default function AddItemForm({ onAddItem }) {
+export default function AddItemForm() {
   const [itemText, setItemText] = useState("");
   const inputRef = useRef();
+  const addItem = useItemsStore(state => state.addItem);
 
   const handleSumbit = e => {
     e.preventDefault();
@@ -20,7 +22,7 @@ export default function AddItemForm({ onAddItem }) {
       packed: false,
     };
 
-    onAddItem(newItem);
+    addItem(newItem);
     setItemText("");
   };
 
